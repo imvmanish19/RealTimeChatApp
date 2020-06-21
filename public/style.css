@@ -26,7 +26,7 @@ h1#heading {
     border-bottom: 2px solid darkred;
 }
 
-#inpMsg {
+#inpMsg,#inpUsername {
     height: 40px;
     width: 300px;
     background-color: snow;
@@ -53,6 +53,16 @@ label {
     font-size: 20px;
 }
 
+
+#btnStart {
+    height: 40px;
+    width: 200px;
+    background-color: chartreuse;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
 #msg {
     margin-top: 20px;
     color: darkblue;
@@ -67,4 +77,9 @@ label {
     width: 300px;
     padding: 5px;
     border-radius: 10px;
+}
+
+.loginbox {
+    display: flex;
+    flex-direction: column;
 }

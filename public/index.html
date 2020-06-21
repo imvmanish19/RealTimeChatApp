@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Chit Chat</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    </head>
-    <body>
-       <h1 id="heading">Chat App</h1>
-       <p id="sub">Welcome To Chit Chat!</p>
-       <div class="box">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chit Chat</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 id="heading">Chat App</h1>
+    <p id="sub">Welcome To Chit Chat!</p>
+    <div class="loginbox">
+        <label for="inpUsername">Enter Username:</label>
+        <input type="text" id="inpUsername">
+        <button type="button" id="btnStart">Start Messaging</button>
+    </div>
+    <div class="secret">
+        <div class="box">
             <label for="inpMsg">Enter Message:</label>
             <input type="text" id="inpMsg">
             <button id="btnSend">Send</button>
-       </div>
-       <h1 id="msg">Messages</h1>
-       <ul id="ulMsgList">
-           <li class="card">Hey,How are you?</li>
-           <li class="card">Start Messaging,Now</li>
-       </ul>
-       <script src="script.js"></script>
-    </body>
+        </div>
+        <h1 id="msg">Messages</h1>
+        <ul id="ulMsgList">
+            <li class="card">Hey,How are you?</li>
+            <li class="card">Start Messaging,Now</li>
+        </ul>
+    </div>
+    <script src="rooms.js"></script>
+</body>
+
 </html>
