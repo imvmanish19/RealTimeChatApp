@@ -8,6 +8,8 @@ const server = http.createServer(app);
 const io = socketio(server);
 app.use('/',express.static(path.join(__dirname,'public')));
 
+let users={};
+
 io.on('connection',(socket) => {
     console.log("Connected with Socket ID",socket.id);
 
@@ -28,9 +30,29 @@ io.on('connection',(socket) => {
     // })
 
     socket.on('login',(data) => {
-        console.log("User Logined",data.username)
-        socket.join(data.username)
-        socket.emit('logged_in')
+
+        if(users[data.username]) {
+            if(users[data.username] == data.password) {
+                socket.join(data.username)
+                socket.emit('logged_in', {
+                user: 'existing'
+            })
+            console.log("User Logined",data.username)
+            }
+            else {
+                socket.emit('login_failed')
+            }
+        }
+        else {
+            users[data.username] = data.password;
+            socket.join(data.username)
+            socket.emit('logged_in', {
+                user: 'new'
+            })
+            console.log("User Logined",data.username)
+        }
+        console.log(users)
+        
     })
 
     socket.on('msg_send',(data) => {
@@ -41,6 +63,7 @@ io.on('connection',(socket) => {
             socket.broadcast.emit('msg_rcvd',data)
         }
     })
+
 
 });
 

@@ -1,18 +1,32 @@
 let socket = io();
 
 $('#btnStart').click(() => {
-    if($('#inpUsername').val() == '') {
-        return alert('Please Enter Username')
+    if($('#inpUsername').val() == '' || $('#inpPassword').val() == '') {
+        return alert('Please Enter All Fields')
     }
     socket.emit('login',{
-        username:$('#inpUsername').val()
+        username:$('#inpUsername').val(),
+        password: $('#inpPassword').val()
     })
     $('#inpUsername').val('');
+    $('#inpPassword').val('');
 })
 
-socket.on('logged_in',() => {
+
+socket.on('logged_in',(data) => {
     $('.loginbox').hide();
     $('.secret').show();
+    if(data.user == 'existing')
+    {
+        alert('Existing User successflly loginned')
+    }
+    else {
+        alert('New user created')
+    }
+})
+
+socket.on('login_failed',() => {
+    window.alert("Wrong Username Or Password")
 })
 
 
@@ -31,24 +45,13 @@ $(document).keydown((e) => {
     let ele = e.target;
     if(e.keyCode == '13')
     {
-        if(ele.id == 'inpUsername') {
-            if($('#inpUsername').val() == '') {
-                return alert('Please Enter Username')
-            }
+        if(ele.id == 'inpUsername' || ele.id == 'inpPassword') {
             $('#btnStart').click();
-            $('#inpUsername').val('');
-            alert('Message Sent Successfully')
         }
         else if(ele.id == 'inpMsg' || ele.id =='inpDefault')
         {
-            if($('#inpMsg').val() == '' && $('#inpDefault').val() == '') {
-                return alert('Please Enter Message And Send To!')
-            }
             if($('#inpMsg').val() == '') {
                 return alert('Please Enter Message')
-            }
-            if($('#inpDefault').val() == '') {
-                return alert('Please Enter Username Of Other User')
             }
             $('#btnSend').click();
             $('#inpMsg').val('');
