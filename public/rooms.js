@@ -33,10 +33,16 @@ $(document).keydown((e) => {
             }
             $('#btnStart').click();
         }
-        else if(ele.id == 'inpMsg')
+        else if(ele.id == 'inpMsg' || ele.id =='inpDefault')
         {
+            if($('#inpMsg').val() == '' && $('#inpDefault').val() == '') {
+                return alert('Please Enter Message And Send To!')
+            }
             if($('#inpMsg').val() == '') {
                 return alert('Please Enter Message')
+            }
+            if($('#inpDefault').val() == '') {
+                return alert('Please Enter Username Of Other User')
             }
             $('#btnSend').click();
         }
