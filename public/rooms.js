@@ -7,6 +7,7 @@ $('#btnStart').click(() => {
     socket.emit('login',{
         username:$('#inpUsername').val()
     })
+    $('#inpUsername').val('');
 })
 
 socket.on('logged_in',() => {
@@ -20,6 +21,8 @@ $('#btnSend').click(() => {
         to: $('#inpDefault').val(),
         msg: $('#inpMsg').val()
     })
+    $('#inpDefault').val('');
+    $('#inpMsg').val('');
 })
 
 //Some Validation
@@ -32,6 +35,7 @@ $(document).keydown((e) => {
                 return alert('Please Enter Username')
             }
             $('#btnStart').click();
+            $('#inpUsername').val('');
         }
         else if(ele.id == 'inpMsg' || ele.id =='inpDefault')
         {
@@ -45,6 +49,12 @@ $(document).keydown((e) => {
                 return alert('Please Enter Username Of Other User')
             }
             $('#btnSend').click();
+            $('#inpMsg').val('');
+            $('#inpDefault').val('');
         }
     }
+})
+
+socket.on('msg_rcvd',(data) => {
+    $('#ulMsgList').append($(`<li class="card">${data.msg}</li>`))
 })
