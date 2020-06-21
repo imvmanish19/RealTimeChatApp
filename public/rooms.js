@@ -23,6 +23,7 @@ $('#btnSend').click(() => {
     })
     $('#inpDefault').val('');
     $('#inpMsg').val('');
+    alert('Message Sent Successfully')
 })
 
 //Some Validation
@@ -36,6 +37,7 @@ $(document).keydown((e) => {
             }
             $('#btnStart').click();
             $('#inpUsername').val('');
+            alert('Message Sent Successfully')
         }
         else if(ele.id == 'inpMsg' || ele.id =='inpDefault')
         {

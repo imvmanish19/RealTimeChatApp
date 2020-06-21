@@ -100,3 +100,12 @@ label {
     display: flex;
     flex-direction: column;
 }
+
+#inpPassword {
+    height: 40px;
+    width: 300px;
+    background-color: snow;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;   
+}
