@@ -61,5 +61,5 @@ $(document).keydown((e) => {
 })
 
 socket.on('msg_rcvd',(data) => {
-    $('#ulMsgList').append($(`<li class="card">${data.msg}</li>`))
+    $('#ulMsgList').append($(`<li class="card">[${data.from}] : ${data.msg}</li>`))
 })
