@@ -31,13 +31,30 @@ h1#heading {
     width: 300px;
     background-color: snow;
     font-size: 30px;
+    margin-top: 1px;
+}
+
+#inpDefault {
+    height: 40px;
+    width: 300px;
+    background-color: snow;
+    font-size: 30px;
+    margin-top: 1px;
     margin-top: 10px;
 }
 
 label {
-    margin-top: 50px;
+    margin-top: 10px;
     font-size: 30px;
     color: darkgreen;
+}
+
+#labelone {
+    margin-top: 50px;
+}
+
+#labeltwo {
+    margin-top: 50px;
 }
 
 .box {
