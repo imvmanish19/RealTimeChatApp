@@ -16,3 +16,5 @@ Note:
 - `rooms.js` files shows the demo of one-one and one-many chattings
 
 And Boom You Can Start Chatting!
+
+Check it out: https://imvmanish-chitchat.herokuapp.com/
