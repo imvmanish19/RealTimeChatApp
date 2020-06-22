@@ -18,3 +18,4 @@ Note:
 And Boom You Can Start Chatting!
 
 Check it out: https://imvmanish-chitchat.herokuapp.com/
+(it may take more to load for the first time due to inactiveness) 
