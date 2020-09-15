@@ -13,9 +13,9 @@ Note:
     - Single Client to Server socket communication
     - Sending message to multiple sockets 
     - Sending message to multiple sockets except the user who sent
-- `rooms.js` files shows the demo of one-one and one-many chattings
+- `rooms.js` files shows the demo of one to one and one-many chattings
 
 And Boom You Can Start Chatting!
 
 Check it out: https://imvmanish-chitchat.herokuapp.com/
-(it may take more to load for the first time due to inactiveness) 
+(it may take more time to load for the first time due to inactiveness) 
