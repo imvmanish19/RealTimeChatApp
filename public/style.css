@@ -110,3 +110,9 @@ label {
     margin-bottom: 5px;   
 }
 
+.bigbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
