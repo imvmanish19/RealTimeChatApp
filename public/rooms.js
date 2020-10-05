@@ -26,7 +26,7 @@ socket.on('logged_in',(data) => {
 })
 
 socket.on('login_failed',() => {
-    window.alert("Wrong Username Or Password")
+    window.alert("Wrong Username Or Password! Try Again!")
 })
 
 
@@ -62,4 +62,6 @@ $(document).keydown((e) => {
 
 socket.on('msg_rcvd',(data) => {
     $('#ulMsgList').append($(`<li class="card">[${data.from}] : ${data.msg}</li>`))
-})
+    alert('New Message Recieved');
+});
+
