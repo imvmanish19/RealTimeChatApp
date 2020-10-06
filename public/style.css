@@ -1,113 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 
 * {
-    font-family: 'Odibee Sans', cursive;
+    font-family: 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    background-color: silver
+	box-sizing: border-box;
 }
 
-h1#heading {
-    color: chartreuse;
-    text-align: center;
-    font-size: 5rem;
-    border: 2px solid darkred;
-    background-color: chocolate;
-    padding: 10px;
-}
-
-#sub {
-    background-color: orange;
-    text-align: center;
-    color: cornsilk;
-    font-size: 2rem;
-    padding: 10px;
-    border-bottom: 2px solid darkred;
-}
-
-#inpMsg,#inpUsername {
-    height: 40px;
-    width: 300px;
-    background-color: snow;
-    font-size: 30px;
-    margin-top: 1px;
-}
-
-#inpDefault {
-    height: 40px;
-    width: 300px;
-    background-color: snow;
-    font-size: 30px;
-    margin-top: 1px;
-    margin-top: 10px;
-}
-
-label {
-    margin-top: 10px;
-    font-size: 30px;
-    color: darkgreen;
-}
-
-#labelone {
-    margin-top: 50px;
-}
-
-#labeltwo {
-    margin-top: 50px;
-}
-
-.box {
-    display: flex;
-    flex-direction: column;
-}
-
-#btnSend {
-    height: 30px;
-    width: 200px;
-    background-color: cornflowerblue;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-
-#btnStart {
-    height: 40px;
-    width: 200px;
-    background-color: chartreuse;
-    margin-top: 10px;
-    font-size: 20px;
-    margin-bottom: 2px;
-}
-
-#msg {
-    margin-top: 20px;
-    color: darkblue;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.card {
-    background-color: bisque;
-    margin-top: 5px;
-    font-size: 30px;
-    width: 300px;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.loginbox {
-    display: flex;
-    flex-direction: column;
-}
-
-#inpPassword {
-    height: 40px;
-    width: 300px;
-    background-color: snow;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 5px;   
+body {
+	background-color: #f1f1f1;
 }
 
 .bigbox {
@@ -115,4 +16,116 @@ label {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+label {
+	color: rgb(77, 77, 77);
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+button {
+	height: 40px;
+	width: 90%;
+	margin: 0 auto;
+	border: none;
+	color: white;
+    background-color: #1cc27f;
+	margin-top: 10px;
+	
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 6px;
+	font-family: 'Secular One', sans-serif;
+}
+
+#btnStart:hover, button:hover {
+	border: 2px solid  black;
+	color: white;
+	background-color: black;
+	transition-duration: 200ms;
+
+	width: 100%;
+}
+
+.login-container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-container img {
+	width: 330px;
+}
+
+.loginbox {
+    display: flex;
+    flex-direction: column;
+	background-color: white;
+	padding: 5%;
+}
+
+.loginbox h1 {
+	color: rgb(39, 39, 39);
+}
+
+.loginbox p {
+	color: rgb(90, 90, 90);
+	margin-bottom: 5%;
+}
+
+input, textarea {
+	width: 100%;
+	height: 40px;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 5px;
+	border: none;
+	border-bottom: 2px solid #1cc27f;
+	background-color: #f1f1f1;
+}
+
+textarea {
+	resize: none;
+	height: 100px;
+}
+
+.secret {
+	display: flex;
+	flex-direction: column;
+}
+
+.msg-list-container {
+	width: 600px;
+}
+
+.card {
+	background-color:white;
+	color: black;
+    margin-top: 5px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+	list-style: none;
+}
+
+.box {
+	position: fixed;
+	bottom: 0;
+
+	width: 600px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+#msg {
+	color: #8f8f8f;
+	padding: 10px;
 }

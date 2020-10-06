@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chit Chat</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    </head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Chit Chat</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Secular+One&display=swap"
+		rel="stylesheet">
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+</head>
 
 <body>
-    <h1 id="heading">Chat App</h1>
-    <p id="sub">Welcome To Chit Chat!</p>
-    <div class="bigbox">
-             <div class="loginbox">
-        <label id="labelone" for="inpUsername">Enter Username:</label>
-        <input type="text" id="inpUsername">
-        <label for="inpPassword" id="labelthree">Enter Password:</label>
-        <input type="password" id="inpPassword">
-        <button type="button" id="btnStart">Start Messaging</button>
-    </div>
-    <div class="secret">
-        <div class="box">
-            <label id="labeltwo" for="inpDefault">Send To:</label>
-            <input type="text" placeholder="Default:Everyone" id="inpDefault">
-            <label for="inpMsg">Enter Message:</label>
-            <input type="text" id="inpMsg">
-            <button id="btnSend">Send</button>
-        </div>
-        <h1 id="msg">Messages</h1>
-        <ul id="ulMsgList">
-            <li class="card">Your Messages Appear Here!</li>
-            <li class="card">Start Messaging Dude!</li>
-        </ul>
-    </div>
-    </div>
-    <script>
-        $('.loginbox').show();
-        $('.secret').hide();
-    </script>
-    <script src="rooms.js"></script>
+	<div class="bigbox">
+		<div class="login-container">
+			<img src="./assets/SleekDoodle.png" alt="SleekDoodle">
+			<div class="loginbox">
+				<h1>Welcome to ChitChat!</h1>
+				<p>New here? fill the form below, to create account or login.</p>
+				<label for="inpUsername">Username</label>
+				<input type="text" id="inpUsername" placeholder="your username">
+				<label for="inpPassword">Password</label>
+				<input type="password" id="inpPassword" placeholder="your password">
+				<button type="button" id="btnStart">Start Messaging</button>
+			</div>
+			<img src="./assets/SelfieDoodle.png" alt="SelfieDoodle">
+		</div>
+		<div class="secret">
+			<h2 id="msg"># Messages</h2>
+			<div class="msg-list-container">
+				<ul id="ulMsgList">
+					<li class="card">Your Messages Appear Here!</li>
+					<li class="card">Start Messaging Dude!</li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<label for="inpDefault">Send private</label>
+				<input type="text" id="inpDefault" placeholder="default: everyone">
+				<label for="inpMsg">Enter Message:</label>
+				<textarea name="msg" id="inpMsg" placeholder="type something..."></textarea>
+				<button id="btnSend">Send</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.loginbox').show();
+		$('.secret').hide();
+	</script>
+	<script src="rooms.js"></script>
 </body>
 
 </html>

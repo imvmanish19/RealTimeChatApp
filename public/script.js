@@ -2,10 +2,10 @@ let socket = io();
 let btnSend = document.getElementById('btnSend');
 let ulMsgList = document.getElementById('ulMsgList');
 
-window.addEventListener('keydown',(event) => {
-    if(event.code == 'Enter') {
+window.addEventListener('keydown', (event) => {
+    if (event.code == 'Enter') {
         let inpMsg = document.getElementById('inpMsg');
-        if(inpMsg.value == '') {
+        if (inpMsg.value == '') {
             return alert("Empty Message!")
         }
         socket.emit('msg_send', {
@@ -17,7 +17,7 @@ window.addEventListener('keydown',(event) => {
 
 btnSend.onclick = function () {
     let inpMsg = document.getElementById('inpMsg');
-    if(inpMsg.value == '') {
+    if (inpMsg.value == '') {
         return alert("Empty Message!")
     }
     socket.emit('msg_send', {
@@ -26,7 +26,7 @@ btnSend.onclick = function () {
     inpMsg.value = '';
 }
 
-socket.on('msg_rcvd',(data) => {
+socket.on('msg_rcvd', (data) => {
     let container = document.createElement('li');
     container.innerText = data;
     container.classList.add('card');
